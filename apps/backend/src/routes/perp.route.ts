@@ -1,6 +1,6 @@
 import { Router } from "express"
 import { requireAuth } from "../middlewares/auth.middleware";
-import { cancelOrder, createOrder, getAvailableEquity, getClosedPositionByMarketId, getFills, getOpenOrdersByMarketId, getOpenPositionByMarketId, getOrdersByMarketId, onRamp } from "../controllers/perp.controller";
+import { cancelOrder, createOrder, getAvailableEquity, getClosedPositionByMarketId, getDepth, getFills, getOpenOrdersByMarketId, getOpenPositionByMarketId, getOrdersByMarketId, onRamp } from "../controllers/perp.controller";
 
 export const perpRouter = Router();
 
@@ -15,3 +15,4 @@ perpRouter.get("/positions/closed/:marketId",getClosedPositionByMarketId);
 perpRouter.get("/orders/open/:marketId",getOpenOrdersByMarketId);
 perpRouter.get("/orders/:marketId",getOrdersByMarketId);
 perpRouter.get("/fills",getFills);
+perpRouter.get("/depth/:symbol",getDepth);

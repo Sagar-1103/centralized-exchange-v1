@@ -11,4 +11,5 @@ export const env = {
     spotIncomingQueue:process.env.SPOT_INCOMING_QUEUE || "backend-to-spot-engine",
     responseQueue: `response-queue-${process.env.BACKEND_QUEUE_ID ?? crypto.randomUUID()}`,
     engineTimeoutMs: Number(process.env.ENGINE_TIMEOUT_MS ?? "30000"),
+    adminToken:getRequiredEnv("ADMIN_TOKEN"),
 }

@@ -12,3 +12,8 @@ model User {
   username String
   password String
 }
+
+model Market {
+  id      String @id @default(uuid())
+  symbol  String
+}
